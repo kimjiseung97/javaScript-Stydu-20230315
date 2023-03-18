@@ -11,13 +11,11 @@ console.log('=====================');
 console.log('HELLO' && 'WORLD');
 console.log(null &&'메롱');
 
-/*
+
 
 
  <h1>안녕하세요 우리 홈페이지에 오신 걸 환영합니다.</h1>
  isLogin()&&<h2>xxx님 안녕하세요!</h2>
 
- 쿠폰당첨플래그 && sendCoupon()
+ 쿠폰당첨플래그 && sendCoupon();
 
-
-*/
