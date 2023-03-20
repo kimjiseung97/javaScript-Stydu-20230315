@@ -11,7 +11,7 @@
  */
 
 function calcBMI(h, w) {
-    var myBmi = w / (h ** 2);
+    var myBmi = w / ((h/100) ** 2);
     if (myBmi >= 25.0) {
         console.log('당신은 과체중입니다');
     } else if (myBmi <= 18.5) {
@@ -32,7 +32,7 @@ function round(myBmi, num) {
     //2째 자리까지 Math.round(number*10**2) / 10**2
     //3째 자리까지 Math.round(number*10**3) / 10**3
     //n번째 자리까지 Math.round(number*10**n) / 10**n
-    return Math.round(myBmi * 1000 ** num) / 10 ** num;
+    return Math.round(myBmi * 10 ** num) / 10 ** num;
 }
 
 
