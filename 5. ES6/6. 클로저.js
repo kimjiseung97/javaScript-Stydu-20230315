@@ -1,5 +1,3 @@
-
-
 //자바 스크립트의 함수는 함수를 리턴할 수 있음
 /*
 function calculater(n1,n2){
@@ -63,18 +61,41 @@ console.log(increaser());
 
 //즉시 실행 함수 : 정의와 동시에 호출
 
-const result =(function (n1,n2){
-    return n1+n2;
-})(5,8);
+// const result = (function (n1, n2) {
+//     return n1 + n2;
+// })(5, 8);
 
-console.log(result);
+// console.log(result);
 
-const increase=(() => {
+const increase = (() => {
     let count = 0; // 지역 변수
     return () => ++count;
 })();
 
-console.log(increase());
-console.log(increase());
-console.log(increase());
+// const inrease = (() => {
+//     let count = 0; // 지역 변수
+//     return () => ++count;
+// })();
 
+// const decrease=(() => {
+//      let count = 10; // 지역 변수
+//     return () => --count;
+// })();
+
+const dereaseClosure = function() {
+
+    let count = 10; //지역변수
+    const innerdecrease =function() {
+        return --count;
+    }
+    return innerdecrease
+};
+
+const decrease = dereaseClosure();
+
+console.log(decrease());
+console.log(decrease());
+console.log(decrease());
+ console.log(increase());
+ console.log(increase());
+ console.log(increase());
