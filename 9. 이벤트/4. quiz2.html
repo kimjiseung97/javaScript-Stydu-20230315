@@ -10,12 +10,39 @@
         .hidden{
             display: none;
         }
+        .menu{
+            margin: 0 auto;
+            width: 500px;
+            border: 1px solid #000;
+        }
+        .menu .title{
+            border: 1px solid violet;
+        }
+        #lunches ul{
+            width: fit-content;
+            height: 100px;
+        }
+        #lunches ul li{
+            width: fit-content;
+            text-align: center;
+            border: 1px solid red;
+        }
+        .menu-bar{
+            color: green;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #000;
+            font-size: 0.5em;
+        }
+        .rotate{
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 
 <body>
     <div id="lunches" class="menu">
-        <span class="title">추천 메뉴(Click Me!)</span>
+        <span class="menu-bar">▶</span> <span class="title">추천 메뉴(Click Me!)</span>
         <ul>
             <li>돈까스</li>
             <li>군만두</li>
@@ -26,12 +53,17 @@
 
     <script>
         const $title = document.querySelector('.menu .title');
-        const $menu = document.querySelectorAll('.menu ul li');
-        console.log($menu);
+        const $menu = [...document.querySelectorAll('.menu ul li')];
+        const $menubar = document.querySelector('.menu .menu-bar');
+        console.log($menubar);
+        // console.log($menu);
 
         $title.onclick = () =>{
-
-            $menu[0].classList.toggle('hidden');
+            // $menu[0].classList.toggle('hidden');
+            document.querySelector('.menu .menu-bar').classList.add('rotate');
+            $menu.forEach($li=>{
+                $li.classList.toggle('hidden');
+            })
         }
     </script>
 </body>
