@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #b2{
+            background: red;
+        }
+    </style>
 </head>
 <body>
     <button id="b1">클릭1</button>
@@ -34,18 +39,34 @@
 
         $b1.onclick = sayHello;
 
-        $b2.onclick = function(){
-            $b2.style.width = '150px';
-        }
-        $b3.onmouseover = () =>{
-            $b3.style.background = 'red';
-        }
-        $b3.onmouseout = () =>{
-            $b3.style.background = 'yellow';
-        }
+        // $b2.onclick = function(){
+        //     $b2.style.width = '150px';
+        // }
+        // $b3.onmouseover = () =>{
+        //     $b3.style.background = 'red';
+        // }
+        // $b3.onmouseout = () =>{
+        //     $b3.style.background = 'yellow';
+        // }
+        document.getElementById('b2').addEventListener('click',()=>{
+            if($b2.style.background==='red'){
+                $b2.style.background = 'green';
+            }else{
+                $b2.style.background = 'red';
+            }
+        })
+
+        $b3.addEventListener('click',()=>{
+          let $comment = $b3.textContent;
+          if($comment==='클릭3'){
+            $b3.innerHTML='클릭4';
+          }else{
+            $b3.innerHTML='클릭3';
+          }
+        })
 
         //핸들러 제거
-        $b3.onmouseover = null;
+        // $b3.onmouseover = null;
     </script>
 </body>
 </html>
