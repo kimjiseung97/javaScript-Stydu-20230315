@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown{
+            width: 500px;
+            margin: 0 auto;
+            margin-top: 100px;
+            height: 800px;
+        }
+        .btn{
+            width: 100px;
+            height: 50px;
+            background: darkred;
+            color: #fff;
+        }
+        #drop-content{
+            width: 200px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+        }
+        .dropdown #drop-content a{
+            background: #ccc;
+            width: 100px;
+            height: 50px;
+            text-align: center;
+            margin-top: 15px;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="btn">Drop</button>
+        <div id="drop-content" style="display: none;">
+            <a href="#">Menu1</a>
+            <a href="#">Menu2</a>
+            <a href="#">Menu3</a>
+            <a href="#">Menu4</a>
+            <a href="#">Menu5</a>
+        </div>
+    </div>
+
+    <script>
+        const $btn = document.querySelector('.dropdown .btn');
+        const $menu = document.querySelectorAll('#drop-content')
+        // console.log($menu);
+        $btn.onmouseover = () =>{
+            $menu[0].style.display ='';
+        }
+        $btn.onmouseout = () =>{
+            $menu[0].style.display = 'none';
+        }
+
+    </script>
+</body>
+</html>
