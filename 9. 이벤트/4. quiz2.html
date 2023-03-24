@@ -14,9 +14,14 @@
             margin: 0 auto;
             width: 500px;
             border: 1px solid #000;
+            display: flex;
+            flex-direction: column;
         }
         .menu .title{
-            border: 1px solid violet;
+            /* border: 1px solid violet; */
+            width: fit-content;
+            justify-content: flex-end;
+            flex-direction: row;
         }
         #lunches ul{
             width: fit-content;
@@ -25,24 +30,30 @@
         #lunches ul li{
             width: fit-content;
             text-align: center;
-            border: 1px solid red;
+            /* border: 1px solid red; */
         }
         .menu-bar{
             color: green;
             width: 16px;
             height: 16px;
-            border: 1px solid #000;
+            /* border: 1px solid #000; */
             font-size: 0.5em;
+            display: block;
+            flex-direction: row;
         }
         .rotate{
-            transform: rotate(180deg);
+            transform: rotate(90deg);
+        }
+        .menu .sub-menu{
+            /* border: 1px solid #000; */
+            display: flex;
         }
     </style>
 </head>
 
 <body>
     <div id="lunches" class="menu">
-        <span class="menu-bar">▶</span> <span class="title">추천 메뉴(Click Me!)</span>
+        <div class="sub-menu"><span class="menu-bar">▶</span> <span class="title">추천 메뉴(Click Me!)</span></div>
         <ul>
             <li>돈까스</li>
             <li>군만두</li>
@@ -54,13 +65,11 @@
     <script>
         const $title = document.querySelector('.menu .title');
         const $menu = [...document.querySelectorAll('.menu ul li')];
-        const $menubar = document.querySelector('.menu .menu-bar');
-        console.log($menubar);
         // console.log($menu);
 
         $title.onclick = () =>{
             // $menu[0].classList.toggle('hidden');
-            document.querySelector('.menu .menu-bar').classList.add('rotate');
+            document.querySelector('.menu .menu-bar').classList.toggle('rotate');
             $menu.forEach($li=>{
                 $li.classList.toggle('hidden');
             })

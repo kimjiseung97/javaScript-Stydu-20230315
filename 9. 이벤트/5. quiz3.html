@@ -54,11 +54,16 @@
         // console.log($menu);
         $btn.onmouseover = () =>{
             $menu[0].style.display ='';
-        }
-        $btn.onmouseout = () =>{
+        };
+        $btn.parentElement.onmouleave = () =>{
             $menu[0].style.display = 'none';
-        }
+        };
 
+
+        /*
+            mouseover , mouseout : 버블링 있음
+            mouseover , mouseleave  : 버블링 없음
+        */
     </script>
 </body>
 </html>
