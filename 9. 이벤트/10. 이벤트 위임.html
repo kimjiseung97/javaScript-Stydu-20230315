@@ -52,6 +52,7 @@
         //2.부모태그인 ul에 범용성있는 이벤트를 부여해서 li들이 버블링을 통해 사용하도록 설정한다
         //3.클릭대상(e.target)에 클래스 active를 부여하고 그 텍스트를 em.msg태그에 복사한다.
         const $fruits = document.querySelector('#fruits');
+        console.log($fruits);
         //태그에서 클래스 active를 제거하는 함수
         const removeActive = () => {
             [...$fruits.children].forEach($li => {
